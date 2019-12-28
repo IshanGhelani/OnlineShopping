@@ -1,0 +1,103 @@
+<html>
+<head>
+	<title> Electronics Shoppping </title>
+</head>
+{% load static %}
+	<link rel="stylesheet" href="{% static 'style.css' %}"> 
+	<link rel="stylesheet" href="{% static 'w3content.css' %}">
+<body>
+	<h1> &nbsp; Online Shopping </h1>
+	<p align="right"> Hello
+		{% if request.session.name %}
+			{{ request.session.name }} &nbsp; <a href="/Login/profile/"> Profile </a> &nbsp; 
+											<a href="/Login/logout/"> Logout </a> &nbsp; &nbsp; 
+		{% else %}
+			User &nbsp; <a href="/Login/"> Login </a> &nbsp; <a href="/Login/create/"> Sign Up </a> &nbsp;
+		{% endif %} 
+	</p>
+	<div class="abc">
+			<font color="red" size=5> {{ msg }} </font><br>
+			<font color="green" size=5> {{ msg1 }} </font><br>
+			<br>
+			<font size=5> Shop By Items : </font><br><br>
+			<form action="/showt/" method="post">{% csrf_token %}
+				<div>
+					<select id="mainselection" name="item">
+						<option hidden> Choose Item </option>
+						<option value="all"> All </option>
+						<option value="television"> Television </option>
+						<option value="headphone"> Head phones </option>
+						<option value="speaker"> Speaker </option>
+						<option value="player"> Media Player </option>
+						<option value="game"> Gaming Console </option>
+						<option value="fridge"> Refrigerator </option>
+						<option value="washhing"> Washing Machine </option>
+						<option value="ac"> Air Conditioner </option>
+					</select>
+					<button class=button value="showt"> Show </button>
+				</div>
+			</form>
+		<form action="/Home/search/">
+			<b><font size=5> Want help! </font></b> &nbsp;
+			<input type="text" name="q" placeholder="Search Your Item" size="70"> 
+			<button class=button value="Search"> Search </button>
+		</form>
+		<p align="right">
+			<a href="/Home/"> Home </a> &nbsp; 
+			<a href="/Cart/"> Your Cart </a> &nbsp;
+			<a href="/About/"> About </a> &nbsp; 
+			<a href="/Contact/"> Contact Us </a> &nbsp; 
+		</p>
+	</div>
+	
+	<center> <h2> Today's Deal </h2> </center>
+	<center>
+		<div class="w3-content w3-display-container">
+		  <img class="mySlides w3-animate-right" src="{% static 'gallery/off1.jpg' %}" style="width:65%;height:60%">
+		  <img class="mySlides w3-animate-right" src="{% static 'gallery/off2.jpg' %}" style="width:65%;height:60%">
+		  <img class="mySlides w3-animate-right" src="{% static 'gallery/off3.jpg' %}" style="width:65%;height:60%">
+		  <img class="mySlides w3-animate-right" src="{% static 'gallery/off4.jpg' %}" style="width:65%;height:60%">
+
+		  <button class="w3-button w3-black w3-display-left w3-animate-left" onclick="plusDivs(-1)">&#10094;</button>
+		  <button class="w3-button w3-black w3-display-right w3-animate-right" onclick="plusDivs(1)">&#10095;</button>
+		</div>
+	</center>
+	<script>
+		var slideIndex = 0;
+		showDivs(slideIndex);
+		carousel();
+		function carousel()
+		{
+		    var i;
+		    var x = document.getElementsByClassName("mySlides");
+		    for (i = 0; i < x.length; i++) {
+		       x[i].style.display = "none";  
+		    }
+		    slideIndex++;
+		    if (slideIndex > x.length) {slideIndex = 1}
+		    x[slideIndex-1].style.display = "block";  
+		    setTimeout(carousel, 4000);
+		}
+		function plusDivs(n)
+		{
+		  showDivs(slideIndex += n);
+		}
+		function showDivs(n) 
+		{
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  if (n > x.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++)
+		  {
+		    x[i].style.display = "none";
+		  }
+		  x[slideIndex-1].style.display = "block";
+		}
+	</script>
+	<br>
+	<div id=footer style="background-color: white;">
+		&copy; 2017-2018  Online Electronics Shopping
+	</div>
+</body>
+</html>
