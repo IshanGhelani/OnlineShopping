@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Verification {% endblock %}
+
+{% block css %} 
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style2.css' %}"> 
+{% endblock %}
+{% block body %}
+	<form action="/Login/change/" method="post"> {% csrf_token %}
+		<center>
+			<p> we have sent you 6 digit varification code.<p>
+			<p> please Enter here to verify. <p>
+			OTP : <input type="text" name="otp" placeholder="Enter OTP" pattern=.{6,6} required> <br><br>
+			<input type="submit" value="Verify" class=button>
+		</center>
+	</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Forgot Password {% endblock %}
+
+{% block css %} 
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style2.css' %}"> 
+{% endblock %}
+{% block body %} 
+	<center> 
+		<form action="/Login/forgott/" method="post"> {% csrf_token %}
+			<p>Enter Email Address or Mobile Number<br>
+			registered with account.
+			</p>
+			<p>
+			detail : <input type="text" name="forg" placeholder="Enter Email or Mobile number" size="30" required><br>
+			<br> <input type="submit" value="Get OTP" class=button> <br> <br>
+			</p>
+			<p>
+				You will receive 6-digit verification code.<br>
+				to confirm your identity.
+			</p>
+		</form>
+	</center>
+{% endblock %}

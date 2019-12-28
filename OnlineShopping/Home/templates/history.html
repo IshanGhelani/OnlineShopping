@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Profile {% endblock %}
+
+{% block css %} 
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style2.css' %}"> 
+{% endblock %}
+{% block body %}
+	{% for p in history %}
+		<div class="gallery">
+			<a href="/view/?product={{ p.p_id.p_id }}" target="_blank">
+				<img src="{% static 'gallery/' %}{{ p.images }}"  alt="{{ p.item }}" title="{{ p.item }}">
+			</a>
+			<div class="desc">
+				<center><table>
+					<tr><td> quantity </td> <td> : {{ p.quantity }} </td></tr>
+					<tr><td> item </td><td> : {{ p.item }} </td> </tr>
+					<tr><td> price </td><td> :<font color="#FF3232"><b> ₹ {{ p.price }} </b></font></td> </tr>
+					<tr><td> company </td><td> : {{ p.p_id.company }} </td> </tr>
+					<tr><td> </td><td> </td></tr>
+				</table></center>
+			</div>
+		</div>
+	{% endfor %}
+	
+{% endblock %}

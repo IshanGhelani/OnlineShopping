@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Change Password {% endblock %}
+
+{% block css %} 
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style2.css' %}"> 
+{% endblock %}
+{% block body %}
+	<br><br>
+	<form action="/Login/verifyt/" method="post"> {% csrf_token %}
+		<center>
+			<p> Change Your Password.</p>
+			<table>
+				<tr>
+					<td><font size=4> New Password : </font> </td>
+					<td>
+						<input type="password" name="pass" placeholder="Enter new password" pattern=.{6,11} required>
+					</td>
+				</tr>
+				<tr>
+					<td> <font size=4>Confirm Password : </font></td>
+					<td> 
+						<input type="password" name="cpass" placeholder="Confirm Your Password" pattern=.{6,11} required>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2> 
+						<center><input type="submit" value="change password" class=button></center>
+					</td>
+				</tr>
+			</table>
+		</center>
+	</form>
+{% endblock %}

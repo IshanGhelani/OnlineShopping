@@ -1,0 +1,115 @@
+#footer{
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: blue;
+    text-align: center;
+	background: none;
+}
+.button {
+	background-color: #3498DB;
+    border: none;
+    color: white;
+    padding: 13px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.textarea{
+	width: 260px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+input[type=number]{
+    width: 13%;
+}
+input[type=text] {
+    width: 310px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+input[type=password] {
+    width: 100px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+.abc a:link,.abc a:visited {
+	background: blue;
+    color: white;
+    padding: 11px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.abc a:hover,.abc a:active {
+    background: #7070FF;
+}
+select {
+	border: 0 none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 2px 10px;
+    width: 296px;
+}
+#mainselection {
+    overflow: hidden;
+    width: 276px;
+    border-radius: 9px 9px 9px 9px;
+    box-shadow: 1px 1px 11px #330033;
+    background: 319px 5px #3498DB;
+}
+.cvv{
+	size:5;
+}
+#payselection {
+    overflow: hidden;
+    width: 100px;
+    border-radius: 9px 9px 9px 9px;
+    box-shadow: 1px 1px 11px #330033;
+    background: 319px 5px #3498DB;
+}
+body{
+	background-image : url("gallery/back3.jpg");
+	background-size : cover;
+	width : 100%;
+	margin : 0;
+	auto;
+}
+p{
+	font-size : 20px;
+}
+a:link {
+    color: blue;
+	text-decoration: none;
+}
+a:visited {
+    color: green;
+	text-decoration: none;
+}
+a:hover , a:active{
+    color: hotpink;
+	text-decoration: underline;
+}

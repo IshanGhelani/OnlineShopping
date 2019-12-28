@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+</head>
+{% block css %}{% endblock %}
+<body>
+	<h1> &nbsp; Online Shopping </h1>
+	<p align="right"> Hello
+		{% if request.session.name %}
+			{{ request.session.name }} &nbsp; <a href="/Login/profile/"> Profile </a> &nbsp; 
+											<a href="/Login/logout/"> Logout </a> &nbsp; &nbsp; 
+		{% else %}
+			User &nbsp; <a href="/Login/"> Login </a> &nbsp; <a href="/Login/create/"> Sign Up </a> &nbsp;
+		{% endif %} 
+	</p>
+	<div class="abc">
+		<p align="right">
+			<a href="/Home/"> Home </a> &nbsp; 
+			<a href="/Cart/"> Your Cart </a> &nbsp;
+			<a href="/About/"> About </a> &nbsp; 
+			<a href="/Contact/"> Contact Us </a> &nbsp; 
+		</p>
+	</div>
+
+	{% block body %}{% endblock %}
+	
+	<div id=footer style="background-color: white;">
+		&copy; 2017-2018  Online Electronics Shopping
+	</div>
+	
+</body>
+</html>

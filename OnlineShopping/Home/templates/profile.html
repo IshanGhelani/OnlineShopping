@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %} Profile {% endblock %}
+
+{% block css %} 
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style2.css' %}"> 
+{% endblock %}
+{% block body %} 
+	<center>
+		<font color="red" size=5> {{ msg }}</font><br><br>
+		<font color="green" size=5> {{ msg1 }} </font><br><br><br>
+		<table>
+			<tr>
+				<td> <font size=5>User Name :</font> </td>
+				<td> <font size=5>{{ i.user_name }} </font></td>
+			</tr>
+			<tr>
+				<td> <font size=5>User ID : </font></td>
+				<td> <font size=5>{{ i.user_id }} </font></td>
+			</tr>
+			<tr>
+				<td> <font size=5>Phone Number : </font></td>
+				<td> <font size=5>{{ i.ph_number }} </font></td>
+			</tr>
+			<tr>
+				<td> <font size=5>Email Address : </font></td>
+				<td> <font size=5>{{ i.email }} </font></td>
+			</tr>
+			<tr>
+				<td> <font size=5>Gender : </font></td>
+				<td> <font size=5>{{ i.gender }} </font></td>
+			</tr>
+			<tr>
+				<td> <font size=5>address : </font></td>
+				<td> <font size=5>{{ i.address }} </font></td>
+			</tr>
+		</table>
+		<br><br>
+		<div class=abc>
+			<a href="/Login/update/"> <font size=4> update Info </font></a>
+			<a href="/Cart/history/"> <font size=4> Order History </font></a>
+		</div>
+	</center>
+{% endblock %}

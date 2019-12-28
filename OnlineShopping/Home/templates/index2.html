@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} Electronics Shoppping {% endblock %}
+
+{% block css %} 
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style.css' %}"> 
+{% endblock %}
+{% block body %} 
+	<center>
+		<font size=5> Shop By Items : </font><br><br>
+		<form action="" method="post">{% csrf_token %}
+			<div>
+				<select id="mainselection" name="item">
+					<option hidden> Choose Item </option>
+					<option value="all"> All </option>
+					<option value="television"> Television </option>
+					<option value="headphone"> Head phones </option>
+					<option value="speaker"> Speaker </option>
+					<option value="player"> Media Player </option>
+					<option value="game"> Gaming Console </option>
+					<option value="fridge"> Refrigerator </option>
+					<option value="washing"> Washing Machine </option>
+					<option value="ac"> Air Conditioner </option>
+				</select>
+				<button class=button value="showt"> Show </button>
+			</div>
+		</form>
+	</center>
+	<br><br>
+	{% for p in product %}
+		<div class="gallery">
+			<a href="/view/?product={{ p.p_id }}" target="_blank">
+				<img src="{% static 'gallery/' %}{{ p.images }}"  alt="{{ p.item }}" title="{{ p.item }}">
+			</a>
+			<div class="desc">
+				<center><table>
+					<tr><td colspan="2">
+						<form action="/Cart/add/" method="post">{% csrf_token %}
+							<b> Quantity : </b><input type="number" min="1" max="99" name="quantity" placeholder="0" required><br>
+							<button class=button2 value="{{ p.p_id }}" name=item> Add to Cart </button>
+						</form>
+					</td></tr>
+					<tr><td> item </td><td> : {{ p.item }} </td> </tr>
+					<tr><td> price </td><td> :<font color="#FF3232"><b> ₹ {{ p.price }} </b></font></td> </tr>
+					<tr><td> company </td><td> : {{ p.company }} </td> </tr>
+					<tr><td> </td><td> </td></tr>
+				</table></center>
+			</div>
+		</div>
+	{% endfor %}
+	<br><br><br>
+{% endblock %}

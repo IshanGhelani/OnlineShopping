@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %} Update Info {% endblock %}
+
+{% block css %} 
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style2.css' %}"> 
+{% endblock %}
+{% block body %} 
+	<form action="/Login/updatet/" method="POST"> {% csrf_token %}
+		<table border="0" width="50%" align="center" cellspacing="15px">
+			<center>
+				<font color="red" size=4> {{ msg }}</font><br><br>
+				<font color="green" size=4> {{ msg1 }} </font><br>
+				all fields are required
+			</center>
+			<tr>
+				<td><font size=5> User ID : </font> </td>
+				<td><input type="text" placeholder="Enter Unique User ID" value="{{ i.user_id }}" name="uid" required> </td>
+			</tr>
+			<tr>
+				<td><font size=5> User Name : </font> </td>
+				<td><input type="text" placeholder="Enter User Name" value="{{ i.user_name }}"name="uname" required> </td>
+			</tr>
+			<tr>
+				<td><font size=5> Password : </font> </td>
+				<td><input type="password" value="{{ i.password }}" placeholder="6-11 character" name="pass" pattern=.{6,11} required> </td>
+			</tr>
+			<tr>
+				<td><font size=5> Confirm Password : </font></td>
+				<td><input type="password" value="{{ i.password }}" placeholder="6-11 character" name="cpass" pattern=.{6,11} required> </td>
+			</tr>
+			<tr>
+				<td><font size=5> Phone Number : </font> </td>
+				<td><input type="text" placeholder="Enter Phone number" name="phnum" pattern=".{10,10}" value="{{ i.ph_number }}" required> </td>
+			</tr>
+			<tr>
+				<td><font size=5> Email Address : </font> </td>
+				<td><input type="text" value="{{ i.email }}" placeholder="Enter Email Address" name="mail" required> </td>
+			</tr>
+			<tr>
+				<td><font size=5> Gender : </font> </td>
+				<td> {% if i.gender == 'MALE' %}
+						<input type="radio" name="gen" value="MALE" checked required> MALE
+						<input type="radio" name="gen" value="FEMALE" required> FEMALE
+					{% else %}
+						<input type="radio" name="gen" value="MALE" required> MALE
+						<input type="radio" name="gen" value="FEMALE" checked required> FEMALE
+					{% endif %}
+				</td>
+			</tr>
+			<tr>
+				<td><font size=5> Delivery Address : </font> </td>
+				<td><textarea placeholder="Enter Delivery Address" name="address" required> {{ i.address }} </textarea></td>
+			</tr>
+			<tr>
+				<td> <center><input type="submit" value="Update" class=button></center> </td>
+				<td> <input type="reset" value="Reset" class=button>
+				  </td>
+			</tr>
+		</table>
+	</form>
+{% endblock %}

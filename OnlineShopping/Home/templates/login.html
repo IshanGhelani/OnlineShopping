@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block css %}
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style2.css' %}"> 
+{% endblock %}
+{% block body %} 
+	<form method="POST" action="/Login/verify/"> {% csrf_token %}
+		<center>
+			<font color="red" size=5> {{ msg }} </font><br>
+			<font color="green" size=5> {{ msg1 }} </font><br>
+			<table cellspacing="20px">
+				<tr>
+					<td><font size=5> User ID : </font></td>
+					<td> <input type="text" placeholder="Enter Your User Name" name=uid required></td> 
+				</tr>
+				<tr>
+					<td><font size=5> Password : </font></td>
+					<td><input type="password" placeholder="Enter password" name=pass required></td>
+				</tr>
+				<tr>
+					<td> <center><input type="submit" value="Login" class=button> </center></td>
+					<td> <center><input type="reset" value="Reset" class=button></center> </td>
+				</tr>
+				<tr>
+					<td> <a href="/Login/create/"><center> Create Account </center></a></td>
+					<td> <center><a href="/Login/forgot/"> Forgot password ? </a> </center></td>
+				</tr>
+			</table>
+		</center>
+	</form>
+{% endblock %}

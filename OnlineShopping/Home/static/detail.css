@@ -1,0 +1,93 @@
+#footer{
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: blue;
+    text-align: center;
+	background: none;
+}
+.button {
+	background-color: #3498DB;
+    border: none;
+    color: white;
+    padding: 13px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button2 {
+    background-color: #FFFF55;
+    border: none;
+    color: black;
+    padding: 13px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 17%;
+}
+input[type=number]{
+    width: 23%;
+}
+table{
+    font-size: 30;
+}
+.abc a:link,.abc a:visited {
+	background: blue;
+    color: white;
+    padding: 11px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: center;
+}
+.abc a:hover,.abc a:active {
+		background: #7070FF;
+}
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+	width: 30%;
+    height: auto;
+	background : none;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 8%;
+    text-align: center;
+}
+
+body{
+    padding-left: 5%;
+	background-image : url("gallery/back3.jpg");
+	background-size : cover;
+	width : 95%;
+	margin : 0;
+	auto;
+}
+p{
+	font-size : 20px;
+}
+a:link {
+    color: blue;
+	text-decoration: none;
+}
+a:visited {
+    color: green;
+	text-decoration: none;
+}
+a:hover , a:active{
+    color: hotpink;
+	text-decoration: underline;
+}
